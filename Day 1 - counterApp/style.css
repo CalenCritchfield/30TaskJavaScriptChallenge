@@ -1,0 +1,118 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #2d3748;
+}
+
+.container {
+  text-align: center;
+  padding: 2.5rem;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  max-width: 90%;
+  width: 400px;
+}
+
+img {
+  align-items: center;
+  width: 70%;
+  padding-bottom: 20px;
+}
+
+h1 {
+  color: #2d3748;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+.counter {
+  font-size: 5rem;
+  font-weight: 700;
+  color: #4a5568;
+  margin: 1.5rem 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+}
+
+.button-group {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+button {
+  font-size: 1.25rem;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  min-width: 100px;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+.increment-btn {
+  background-color: rgb(1, 171, 1);
+}
+.decrement-btn {
+  background: #dc2626;
+}
+
+.increment-btn:hover {
+  background-color: rgb(4, 152, 4);
+  box-shadow: 0 4px 12px rgba(8, 187, 26, 0.3);
+}
+.decrement-btn:hover {
+  background: #b91c1c;
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+}
+
+#reset-btn {
+  background: #4c1d95;
+}
+
+#reset-btn:hover {
+  background: #5b21b6;
+  box-shadow: 0 4px 12px rgba(76, 29, 149, 0.3);
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 1.5rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .counter {
+    font-size: 4rem;
+  }
+
+  button {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    min-width: 80px;
+  }
+}

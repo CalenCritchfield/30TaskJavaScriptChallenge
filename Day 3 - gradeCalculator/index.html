@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grade Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="calculator">
+      <div class="logo-container">
+        <img src="images/logo.svg" />
+      </div>
+      <h1>Grade Calculator</h1>
+
+      <div class="input-group">
+        <label>Enter Your Score</label>
+        <div class="score-inputs">
+          <input
+            type="number"
+            id="pointsEarned"
+            min="0"
+            placeholder="Points earned"
+          />
+          <span class="divider">/</span>
+          <input
+            type="number"
+            id="totalPoints"
+            min="0"
+            placeholder="Total points"
+          />
+        </div>
+      </div>
+
+      <button id="calculate-btn">Calculate Grade</button>
+
+      <div id="result" class="result"></div>
+
+      <div class="grade-chart">
+        <h3>Grade Ranges</h3>
+        <div class="grade-ranges">
+          <div class="grade-range">
+            <strong>A</strong>
+            <div>90-100</div>
+          </div>
+          <div class="grade-range">
+            <strong>B</strong>
+            <div>80-89</div>
+          </div>
+          <div class="grade-range">
+            <strong>C</strong>
+            <div>70-79</div>
+          </div>
+          <div class="grade-range">
+            <strong>D</strong>
+            <div>60-69</div>
+          </div>
+          <div class="grade-range">
+            <strong>F</strong>
+            <div>0-59</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
