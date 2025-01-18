@@ -3,31 +3,28 @@ function calculateGrade() {
   const totalPointsInput = document.getElementById("totalPoints");
   const resultDiv = document.getElementById("result");
 
-  const pointsEarned = Number(pointsEarnedInput.value);
-  const totalPoints = Number(totalPointsInput.value);
+  const pointsEarned = pointsEarnedInput.value;
+  const totalPoints = totalPointsInput.value;
 
   resultDiv.style.display = "block";
-  resultDiv.classList.remove("error", "success");
+  resultDiv.classList.remove("error", "sucess");
 
-  if (pointsEarnedInput.value === "" || totalPointsInput.value === "") {
-    displayError("Please enter both points earned and total points");
-    return;
-  }
-
-  if (isNaN(pointsEarned) || isNaN(totalPoints)) {
-    displayError("Please enter valid numbers");
-    return;
-  }
-
-  if (pointsEarned < 0 || totalPoints <= 0) {
+  if (!pointsEarned || !totalPoints) {
     displayError(
-      "Points cannot be negative and total points must be greater than 0"
+      "Please enter a number in both points earned and total points"
     );
     return;
   }
-
+  if (isNaN(pointsEarned) || isNaN(totalPoints)) {
+    displayError("Please enter a valid number");
+    return;
+  }
+  if (pointsEarned < 0 || totalPoints <= 0) {
+    displayError("Grade cannot be a negative number");
+    return;
+  }
   if (pointsEarned > totalPoints) {
-    displayError("Points earned cannot be greater than total points");
+    displayError("Points earned cannot be higher than total points");
     return;
   }
 
@@ -48,11 +45,11 @@ function calculateGrade() {
 
   resultDiv.classList.add("success");
   resultDiv.innerHTML = `
-    <strong>Your Results:</strong><br>
-    Score: ${pointsEarned}/ ${totalPoints} <br>
-    Percentage: ${percentage.toFixed(1)}%<br>
-    Grade: ${grade}
-    `;
+  <strong>Your Result:</strong><br>
+  Score: ${pointsEarned} / ${totalPoints}<br>
+  Percentage: ${percentage.toFixed(1)}%<br>
+  Grade: ${grade}
+  `;
 }
 
 function displayError(message) {

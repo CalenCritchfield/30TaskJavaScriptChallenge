@@ -1,12 +1,13 @@
-const incrementBtn = document.getElementById("increment-btn");
+const counter = document.getElementById("counter");
 const decrementBtn = document.getElementById("decrement-btn");
 const resetBtn = document.getElementById("reset-btn");
-const counter = document.getElementById("counter");
+const incrementBtn = document.getElementById("increment-btn");
 
 let count = 0;
 
-function updateCounter() {
-  counter.innerHTML = count;
+function updateCount() {
+  counter.textContent = count;
+
   if (count > 0) {
     counter.style.color = "green";
   } else if (count < 0) {
@@ -16,19 +17,19 @@ function updateCounter() {
   }
 }
 
-updateCounter();
-
-incrementBtn.addEventListener("click", () => {
-  count++;
-  updateCounter();
-});
-
 decrementBtn.addEventListener("click", () => {
   count--;
-  updateCounter();
+  updateCount();
 });
 
 resetBtn.addEventListener("click", () => {
   count = 0;
-  updateCounter();
+  updateCount();
 });
+
+incrementBtn.addEventListener("click", () => {
+  count++;
+  updateCount();
+});
+
+updateCount();

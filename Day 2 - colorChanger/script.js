@@ -16,14 +16,14 @@ function createBox(color) {
   box.addEventListener("click", () => {
     document.body.style.backgroundColor = color;
 
-    let hexCodeWrite = document.getElementById("hexCodeWrite");
-    hexCodeWrite.innerHTML = color;
+    const hexCodeWrite = document.getElementById("hexCodeWrite");
     hexCodeWrite.style.color = color;
+    hexCodeWrite.innerHTML = color;
   });
   return box;
 }
 
-function colorPalatte() {
+function colorPalette() {
   const colorPalette = document.getElementById("color-palette");
   colorPalette.innerHTML = "";
 
@@ -34,7 +34,7 @@ function colorPalatte() {
   }
 }
 
-colorPalatte();
+colorPalette();
 
 const generateBtn = document.getElementById("generate-btn");
-generateBtn.addEventListener("click", colorPalatte);
+generateBtn.addEventListener("click", colorPalette);
