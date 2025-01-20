@@ -5,8 +5,8 @@ const incrementBtn = document.getElementById("increment-btn");
 
 let count = 0;
 
-function updateCount() {
-  counter.textContent = count;
+function updateCounter() {
+  counter.innerHTML = count;
 
   if (count > 0) {
     counter.style.color = "green";
@@ -19,17 +19,15 @@ function updateCount() {
 
 decrementBtn.addEventListener("click", () => {
   count--;
-  updateCount();
+  updateCounter();
 });
 
 resetBtn.addEventListener("click", () => {
   count = 0;
-  updateCount();
+  updateCounter();
 });
 
 incrementBtn.addEventListener("click", () => {
   count++;
-  updateCount();
+  updateCounter();
 });
-
-updateCount();
