@@ -3,12 +3,13 @@ let is24Hour = false;
 function updateClock() {
   const now = new Date();
   let hours = now.getHours();
-  const minutes = now.getMinutes();
-  const seconds = now.getSeconds();
+  let minutes = now.getMinutes();
+  let seconds = now.getSeconds();
+
   let period = "";
 
   if (!is24Hour) {
-    period = hours >= 12 ? " PM" : " AM";
+    period = hours >= 12 ? "PM" : "AM";
     hours = hours % 12;
     hours = hours ? hours : 12;
   }
@@ -19,7 +20,7 @@ function updateClock() {
 
   document.getElementById(
     "clock"
-  ).textContent = `${displayHours}:${displayMinutes}:${displaySeconds}${period}`;
+  ).textContent = `${displayHours}:${displayMinutes}:${displaySeconds}`;
 }
 
 document.getElementById("format-toggle").addEventListener("click", function () {
@@ -29,4 +30,5 @@ document.getElementById("format-toggle").addEventListener("click", function () {
 });
 
 setInterval(updateClock, 1000);
+
 updateClock();

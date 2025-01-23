@@ -16,14 +16,14 @@ function addTask() {
 
   const taskItem = document.createElement("li");
   taskItem.innerHTML = `
-  <input type="checkbox" class="task-checkbox" >
-  <span>${taskText}</span>
-  <button class="delete-btn">Delete</button>
+  <input type="checkbox" class="task-checkbox">
+    <span>${taskText}</span>
+    <button class="delete-btn">Delete</button>
+
   `;
 
   taskList.appendChild(taskItem);
   saveTask();
-
   taskInput.value = "";
 }
 
@@ -37,7 +37,7 @@ taskList.addEventListener("click", function (e) {
   }
 });
 
-function saveTasks() {
+function saveTask() {
   const tasks = [];
   taskList.querySelectorAll("li").forEach((taskItem) => {
     tasks.push({
@@ -47,17 +47,16 @@ function saveTasks() {
   });
   localStorage.setItem("tasks", JSON.stringify(tasks));
 }
+
 function loadTasks() {
   const tasks = JSON.parse(localStorage.getItem("tasks"));
   if (tasks) {
     tasks.forEach((task) => {
       const taskItem = document.createElement("li");
       taskItem.innerHTML = `
-        <input type="checkbox" class="task-checkbox" ${
-          task.completed ? "checked" : ""
-        }>
-        <span class="${task.completed ? "completed" : ""}">${task.text}</span>
-        <button class="delete-btn">Delete</button>
+      <input type="checkbox" class="task-checkbox" task.completed ? "completed" : "">
+      <span class="${task.completed ? "completed" : ""}">${task.text}</span>
+      <button class="delete-btn">Delete</button>
       `;
       taskList.appendChild(taskItem);
     });
