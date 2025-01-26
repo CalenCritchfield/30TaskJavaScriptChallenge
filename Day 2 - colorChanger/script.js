@@ -17,8 +17,8 @@ function createBox(color) {
     document.body.style.backgroundColor = color;
 
     const hexCodeWrite = document.getElementById("hexCodeWrite");
-    hexCodeWrite.style.color = color;
     hexCodeWrite.innerHTML = color;
+    hexCodeWrite.style.color = color;
   });
   return box;
 }
@@ -34,7 +34,7 @@ function colorPalette() {
   }
 }
 
-colorPalette();
-
 const generateBtn = document.getElementById("generate-btn");
 generateBtn.addEventListener("click", colorPalette);
+
+colorPalette();
