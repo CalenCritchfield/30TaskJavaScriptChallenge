@@ -16,13 +16,13 @@ function addTask() {
 
   const taskItem = document.createElement("li");
   taskItem.innerHTML = `
-  <input type="checkbox" class="task-checkbox">
+  <input type="checkbox" class="task-checkbox"/>
   <span>${taskText}</span>
   <button class="delete-btn">Delete</button>
   `;
+
   taskList.appendChild(taskItem);
   saveTasks();
-
   taskInput.value = "";
 }
 
@@ -54,8 +54,8 @@ function loadTasks() {
       const taskItem = document.createElement("li");
       taskItem.innerHTML = `
       <input type="checkbox" class="task-checkbox" ${
-        task.completed ? "completed" : ""
-      } />
+        task.completed ? "checked" : ""
+      }/>
       <span class="${task.completed ? "completed" : ""}">${task.text}</span>
       <button class="delete-btn">Delete</button>
       `;

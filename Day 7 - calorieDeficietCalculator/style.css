@@ -1,13 +1,15 @@
 body {
   font-family: "Helvetica Neue", Arial, sans-serif;
-  max-width: 600px;
+
   margin: 0 auto;
   padding: 30px 20px;
-  background: linear-gradient(135deg, #49cb0c, #256a05);
+  background: linear-gradient(135deg, #49cb0c, #256a05) no-repeat;
   overflow-x: hidden;
 }
 
 .calculator-body {
+  margin: 0 auto;
+  max-width: 600px;
   padding: 20px;
   border: 1px solid rgb(246, 246, 246);
   background-color: #eeeeee;

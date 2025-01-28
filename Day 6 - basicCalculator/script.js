@@ -1,12 +1,11 @@
-const display = document.getElementById("display");
+let display = document.getElementById("display");
 let resetDisplay = false;
 
 function appendToDisplay(value) {
   if (resetDisplay) {
     display.value = "";
     resetDisplay = false;
-  }
-  if (display.value === "0" && value !== ".") {
+  } else if (display.value === "0" && value !== ".") {
     display.value = value;
   } else {
     display.value += value;

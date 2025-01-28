@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <title>Tip calculator</title>
+  <link rel="stylesheet" href="style.css" />
+  <body>
+    <div class="calculator">
+      <div class="logo-container">
+        <img src="../images/logo.svg" />
+      </div>
+      <h1>Tip Calculator</h1>
+
+      <div class="input-group">
+        <label for="bill">Bill Amount</label>
+        <input
+          type="number"
+          id="bill"
+          placeholder="Enter bill amount"
+          min="0"
+          step="0.01"
+        />
+        <div class="error" id="billError">Please enter a valid amount</div>
+      </div>
+
+      <div class="input-group">
+        <label>Select Tip %</label>
+        <div class="tip-buttons">
+          <button class="tip-btn" data-tip="5">5%</button>
+          <button class="tip-btn" data-tip="10">10%</button>
+          <button class="tip-btn" data-tip="15">15%</button>
+          <button class="tip-btn" data-tip="20">20%</button>
+          <button class="tip-btn" data-tip="25">25%</button>
+          <button class="tip-btn custom" data-tip="custom">Custom</button>
+        </div>
+        <input
+          type="number"
+          id="customTip"
+          placeholder="Enter custom tip %"
+          min="0"
+          max="100"
+          style="display: none"
+        />
+        <div class="error" id="tipError">Please select a tip percentage</div>
+      </div>
+
+      <div class="input-group">
+        <label for="people">Number of People</label>
+        <input
+          type="number"
+          id="people"
+          placeholder="Enter number of people"
+          min="1"
+          value="1"
+        />
+        <div class="error" id="peopleError">
+          Please enter a valid number of people
+        </div>
+      </div>
+
+      <div class="result">
+        <div class="result-row">
+          <span>Tip Amount</span>
+          <span class="amount" id="tipAmount">R0.00</span>
+        </div>
+        <div class="result-row">
+          <span>Tip Per Person</span>
+          <span class="amount" id="tipPerPerson">R0.00</span>
+        </div>
+        <div class="result-row">
+          <span>Total Amount</span>
+          <span class="amount" id="totalAmount">R0.00</span>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

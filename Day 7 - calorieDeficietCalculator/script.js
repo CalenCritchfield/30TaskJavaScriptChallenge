@@ -21,7 +21,7 @@ function calculateCalories() {
       ? 88.362 + 13.397 * weight + 4.799 * height - 5.677 * age
       : 447.593 + 9.247 * weight + 3.098 * height - 4.33 * age;
 
-  const activityMultiplier = {
+  const acitivityMultiplier = {
     sedentary: 1.2,
     light: 1.375,
     moderate: 1.55,
@@ -29,27 +29,23 @@ function calculateCalories() {
     athlete: 1.9,
   };
 
-  const tdee = bmr * activityMultiplier[activityLevel];
-  const deficit = tdee - tdee * (1 - 0.2);
+  const tdee = bmr * acitivityMultiplier[activityLevel];
+  const deficit = tdee * 0.2;
   const weeksToTarget = (weight - targetWeight) / weightLossPace;
 
   const resultDiv = document.getElementById("result");
-  resultDiv.classList.add("result");
   resultDiv.style.display = "block";
-
   resultDiv.innerHTML = `
-  <h2>My calorie deficit</h2><br>
-  <p>Calories to maintain current weight: ${tdee.toFixed(0)} calories</p><br>
-  <p>Recommended daily calories: ${(tdee * (1 - 0.2)).toFixed(
+  <h2>Your Calorie Deficit</h2>
+  <p>Calories to maintain your current weight ${tdee.toFixed(0)} calories.
+  <p> Reccomended daily calories: ${(tdee * (1 - 0.2)).toFixed(0)} calories</p>
+  <p>To reach your target weight of ${targetWeight}KG at a pace of ${weightLossPace}KG per week, you should aim for ${deficit.toFixed(
     0
-  )} calories</p><br>
-  <p>To reach your target weight of ${targetWeight} kg at a pace of ${weightLossPace} kg per week, you should aim for ${deficit.toFixed(
-    0
-  )} calories per day.</p><br>
-  <p>This will take approximately ${Math.round(
+  )} calories deficit per day.
+  * <p>This will take approximately ${Math.round(
     weeksToTarget
   )} weeks (around ${new Date(
     new Date().getTime() + weeksToTarget * 7 * 24 * 60 * 60 * 1000
-  ).toLocaleDateString()})</p>
-`;
+  ).toLocaleDateString()}).</p>
+  `;
 }

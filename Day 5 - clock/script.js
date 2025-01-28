@@ -4,8 +4,7 @@ function updateClock() {
   const now = new Date();
   let hours = now.getHours();
   const minutes = now.getMinutes();
-  let seconds = now.getSeconds();
-
+  const seconds = now.getSeconds();
   let period = "";
 
   if (!is24Hour) {
